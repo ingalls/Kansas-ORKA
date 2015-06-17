@@ -11,15 +11,14 @@ echo "{\"type\":\"FeatureCollection\",\"features\":[" > $(dirname $0)/data/parce
 find $(dirname $0)/data/ -type f -regex ".*.gz" \
     | while read file; do
 
-        # if [[ $file == *Parcels.geojson.gz ]]; then
-        # echo "# +=> single parcel layer ($file)"
-        #     gzip -dc $(dirname $0)/$file \
-        #         | jq -r -c '.features | . []' | while read line; do
-        #             echo "$line,">> $(dirname $0)/data/parcels.geojson
-        #         done
-        # fi
-        #
-        #
+         if [[ $file == *Parcels.geojson.gz ]]; then
+         echo "# +=> single parcel layer ($file)"
+             gzip -dc $(dirname $0)/$file \
+                 | jq -r -c '.features | . []' | while read line; do
+                     echo "$line,">> $(dirname $0)/data/parcels.geojson
+                 done
+         fi
+
         # if [[ $file == "Roads.geojson.gz" ]]; then
         #     echo "# +=> road layer ($file)"
         #     gzip -dc $(dirname $0)/$file \
