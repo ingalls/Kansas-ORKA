@@ -10,7 +10,7 @@ This data includes county boundaries, parcels, addresses, & some landcover data.
 ## Installation
 
 - GNU coreutils
-- grep, sed, curl, etc.
+- jq, grep, sed, curl, etc.
 - esri-dump (`sudo npm install -g esri-dump`)
 
 ## Running
