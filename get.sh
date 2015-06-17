@@ -3,10 +3,10 @@
 OLDIFS=$IFS
 
 # Usage: filesafe "filename"
-# Returns a valid file/folder name 
+# Returns a valid file/folder name
 function _filesafe() {
-    if [[ -z $1 ]]; then exit 1; fi  
-    echo $(echo "$1" | sed -e 's/[^A-Za-z0-9._-]/_/g') 
+    if [[ -z $1 ]]; then exit 1; fi
+    echo $(echo "$1" | sed -e 's/[^A-Za-z0-9._-]/_/g')
 }
 
 mkdir $(dirname $0)/data &>/dev/null|| true
